@@ -5,7 +5,10 @@
 # (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
 #
-# last mod 2010-04-20, KS
+# Maybe some Copyrights belongs to www.wasco.de or the Messcomp Datentechnik
+# GmbH.
+#
+# last mod 2010-06-21, KS
 
 
 # Kleines Programm um eine Wasco Multifunktionskarte ueber Python
