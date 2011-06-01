@@ -12,8 +12,12 @@ WascoExample.py increases the first three analog outputs (DAOUT1_16 to
 DAOUT3_16) from -10 V to 10 V over time.
 """
 
-from wasco import wasco, boardId
-from WascoConstants import DAOUT1_16, DAOUT2_16, DAOUT3_16
+try:    # normal import, if eyeone module is installed correctly 
+    from wasco.wasco import wasco, boardId
+    from wasco.WascoConstants import DAOUT1_16, DAOUT2_16, DAOUT3_16
+except:     # if you running this in the eyeone folder
+    from wasco import wasco, boardId
+    from WascoConstants import DAOUT1_16, DAOUT2_16, DAOUT3_16
 import time
 
 wasco.wasco_outportW(boardId, DAOUT1_16, 0x000)
