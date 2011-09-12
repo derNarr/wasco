@@ -5,21 +5,15 @@
 # (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
 #
-# Maybe some Copyrights belongs to www.wasco.de or the Messcomp Datentechnik
+# Maybe some Copyrights belong to www.wasco.de or the Messcomp Datentechnik
 # GmbH.
-#
-# last mod 2010-06-21, KS
 
-
-# Kleines Programm um eine Wasco Multifunktionskarte ueber Python
-# anzusprechen.
-
-# Grundsaetzlich ist aus der wasco.h einige Definitionen uebernommen, dann
-# wird mit ctypes die dll geladen und die Karte vorbereitet.
+# Grundsaetzlich werden aus der wasco.h einige Definitionen uebernommen,
+# dann wird mit ctypes die dll geladen und die Karte vorbereitet.
 
 """
-WascoConstants.py defines all important variables, constants and structs
-for the wasco-card.
+WascoConstants.py defines all important variables, constants and structures
+for wasco card.
 """
 
 from ctypes import Structure, c_ulong, c_char
@@ -43,7 +37,7 @@ WF_GAIN_8              = 0x05000000 ## gain of analog conversion is 8
 WF_GAIN_16             = 0x08000000 ## gain of analog conversion is 16
 WF_8_BIT               = 0x00800000 ## 8-bit analog conversion (else 12-bit)
 
-## these functions describes 'functions' of WascoBoardInfo:
+## these functions describe 'functions' of WascoBoardInfo:
 WASCO_DESCR_INTERRUPT  = 0x00000100
 WASCO_DESCR_TIMER      = 0x00001000
 
