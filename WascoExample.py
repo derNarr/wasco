@@ -4,8 +4,6 @@
 #
 # (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
-#
-# last mod 2010-04-20, KS
 
 """
 WascoExample.py increases the first three analog outputs (DAOUT1_16 to 
@@ -15,7 +13,7 @@ DAOUT3_16) from -10 V to 10 V over time.
 try:    # normal import, if eyeone module is installed correctly 
     from wasco.wasco import wasco, boardId
     from wasco.WascoConstants import DAOUT1_16, DAOUT2_16, DAOUT3_16
-except:     # if you running this in the eyeone folder
+except:     # if you run this in eyeone folder
     from wasco import wasco, boardId
     from WascoConstants import DAOUT1_16, DAOUT2_16, DAOUT3_16
 import time
