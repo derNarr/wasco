@@ -25,6 +25,7 @@ class Wasco(object):
     Class for wasco.
     """
     def __init__(self, dummy=False):
+        self.dummy = dummy
     try: 
         if self.dummy is True:
             raise(BaseException) # GOTO: Exception is just used to jump to the except block
