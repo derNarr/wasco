@@ -56,8 +56,10 @@ class Wasco(object):
         except (OSError, ImportError, BaseException):
             if self.dummy is False:
                 print('''########## WARNING ##########
-                        Cannot load wasco.dll. Creating wasco dummy!
-                        ########## WARNING ##########''')
+                        Cannot load wasco.dll. Creating wasco dummy!''')
+            self.boardId = c_int(1)
+            self.error = c_ulong()
+            self.boardInfo = WascoConstants.WascoBoardInfo()
             pass
 
     def wasco_outportW(self, board_id, channel, value):
