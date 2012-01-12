@@ -5,24 +5,20 @@
 # (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
 
-
-"""
-wasco.py gives you an object wasco which is a handle for wasco card
-and already initialized.
-It also gives you the boardId and boardInfo in the variables boardId and 
-boardInfo.
-"""
-
-# Grundsaetzlich werden aus der wasco.h einige Definitionen uebernommen,
-# dann wird mit ctypes die dll geladen und die Karte vorbereitet.
-
 from ctypes import c_int,c_ulong,byref
 import WascoConstants
 from exceptions import OSError, ImportError, BaseException 
 
 class Wasco(object): 
     """ 
-    Class for wasco.
+    Gives you an object wasco which is a handle for wasco card and already
+    initialized. 
+    
+    It also gives you the boardId and boardInfo in the
+    variables boardId and boardInfo.
+
+    In principle, some definitions from wasco.h are taken, then dll is
+    loaded using ctypes, and card is initialized.
     """
     def __init__(self, dummy=False):
         self.dummy = dummy
@@ -30,7 +26,7 @@ class Wasco(object):
             if self.dummy is True:
                 raise(BaseException) # GOTO: Exception is just used to jump to the except block
             from ctypes import windll
-            ## load dll
+            # load dll
             self.wasco = windll.wasco
             
             # define some important variables
@@ -38,17 +34,17 @@ class Wasco(object):
             self.error = c_ulong()
             self.boardInfo = WascoConstants.WascoBoardInfo()
             
-            ## error if board-id is not valid
+            # error if board-id is not valid
             self.error = self.wasco.wasco_getBoardInfo(self.boardId, byref(self.boardInfo))
             
             if( self.error ):
                 print self.error
             
-            ## warning if there are no analog outputs
+            # warning if there are no analog outputs
             if( not self.boardInfo.nAnalogOut ):
                 print "WARNING: no analog outputs found"
             
-            ## initialize card
+            # initialize card
             self.wasco.wasco_openBoard( byref(self.boardId), self.boardInfo.pBoardName)
 
             self.wasco_outportW = self.wasco.wasco_outportW
@@ -64,10 +60,9 @@ class Wasco(object):
 
     def wasco_outportW(self, board_id, channel, value):
         """
-        dummy function
+        Dummy function is only called when dummy=True.
         """
         # dummy for the only function we use
-        # only called when dummy=True
         pass
 
 wasco = Wasco()
