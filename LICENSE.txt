@@ -1,6 +1,7 @@
 wasco is a python-wrapper for the wasco psi card.
 
-Copyright (C) 2010-2011  Konstantin Sering <konstantin.sering [aet] gmail.com>
+Copyright (C) 2010-2012  Konstantin Sering, Nora Umbach, Dominik Wabersich
+<colorlab[at]psycho.uni-tuebingen.de>
 
 Maybe some Copyrights belongs to www.wasco.de or the Messcomp Datentechnik
 GmbH.
