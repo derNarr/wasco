@@ -13,10 +13,10 @@
 # output: --
 #
 # created 2010
-# last mod 2012-05-29 12:38 DW
+# last mod 2012-05-30 10:42 DW
 
 from ctypes import c_int,c_ulong,byref
-import WascoConstants
+import constants
 from exceptions import OSError, ImportError, BaseException 
 
 class Wasco(object): 
@@ -42,7 +42,7 @@ class Wasco(object):
             # define some important variables
             self.boardId = c_int(1)
             self.error = c_ulong()
-            self.boardInfo = WascoConstants.WascoBoardInfo()
+            self.boardInfo = constants.WascoBoardInfo()
             
             # error if board-id is not valid
             self.error = self.wasco.wasco_getBoardInfo(self.boardId, byref(self.boardInfo))
@@ -65,7 +65,7 @@ class Wasco(object):
                         Cannot load wasco.dll. Creating wasco dummy!''')
             self.boardId = c_int(1)
             self.error = c_ulong()
-            self.boardInfo = WascoConstants.WascoBoardInfo()
+            self.boardInfo = constants.WascoBoardInfo()
             pass
 
     def wasco_outportW(self, board_id, channel, value):
