@@ -1,9 +1,19 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-# ./wasco/wasco.py
+# wasco/wasco.py
 #
-# (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
+# (c) 2010-2012 Konstantin Sering, Nora Umbach, Dominik Wabersich
+# <colorlab[at]psycho.uni-tuebingen.de>
+#
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
+#
+# content: 
+#
+# input: --
+# output: --
+#
+# created 2010
+# last mod 2012-05-29 12:38 DW
 
 from ctypes import c_int,c_ulong,byref
 import WascoConstants

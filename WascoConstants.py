@@ -1,12 +1,22 @@
 #!/usr/bin/env python
 # -*- encoding: utf-8 -*-
-# ./wasco/WascoConstants.py
+# wasco/constants.py
 #
-# (c) 2010 Konstantin Sering <konstantin.sering [aet] gmail.com>
-# GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
-#
+# (c) 2010-2012 Konstantin Sering, Nora Umbach, Dominik Wabersich
+# <colorlab[at]psycho.uni-tuebingen.de>
 # Maybe some Copyrights belong to www.wasco.de or the Messcomp Datentechnik
 # GmbH.
+#
+# GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
+#
+# content: Tubes and DevTubes classes, which provide functions for working
+# with the tubes.
+#
+# input: --
+# output: --
+#
+# created 2010
+# last mod 2012-05-29 14:20 DW
 
 # Grundsaetzlich werden aus der wasco.h einige Definitionen uebernommen,
 # dann wird mit ctypes die dll geladen und die Karte vorbereitet.
