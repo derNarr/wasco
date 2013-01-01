@@ -16,7 +16,7 @@
 # output: --
 #
 # created 2010
-# last mod 2012-05-29 14:20 DW
+# last mod 2013-01-01 10:55 KS
 
 # Grundsaetzlich werden aus der wasco.h einige Definitionen uebernommen,
 # dann wird mit ctypes die dll geladen und die Karte vorbereitet.
@@ -335,7 +335,7 @@ class WascoBoardInfo(Structure):
 #  WORD nOptoInp;                ## number of OPTOIN bits
 #  WORD nOptoOut;                ## number of OPTOUT bits
 #  WORD functions;               ## functions of the board
-#} WascoBoardInfo;               ## 
+#} WascoBoardInfo;               ##
 
 ## prototype of the interrupt callback function:
 #typedef WERROR (__stdcall* WascoCallBack)( VOID* pArgs, WascoContext* pContext );

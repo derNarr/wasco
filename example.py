@@ -13,14 +13,15 @@
 # output: --
 #
 # created 2010
-# last mod 2012-05-30 10:39 DW
+# last mod 2013-01-01 10:55 KS
 
 """
-WascoExample.py increases the first three analog outputs (DAOUT1_16 to 
-DAOUT3_16) from -10 V to 10 V over time.
+WascoExample.py increases the first three analog outputs (DAOUT1_16 to
+DAOUT3_16) from 0 V to 10 V over time.
+
 """
 
-try:    # normal import, if eyeone module is installed correctly 
+try:    # normal import, if eyeone module is installed correctly
     from wasco.wasco import wasco, boardId
     from wasco.constants import DAOUT1_16, DAOUT2_16, DAOUT3_16
 except:     # if you run this in eyeone folder
@@ -31,7 +32,7 @@ import time
 wasco.wasco_outportW(boardId, DAOUT1_16, 0x000)
 wasco.wasco_outportW(boardId, DAOUT2_16, 0x000)
 wasco.wasco_outportW(boardId, DAOUT3_16, 0x000)
-time.sleep(1)     
+time.sleep(1)
 
 
 for i in range(0xFF):
@@ -79,10 +80,10 @@ wasco.wasco_outportW(boardId, DAOUT3_16, 0x000)
 #wasco.wasco_outportW(boardId, DAOUT1_16, 0xFFF)
 #wasco.wasco_outportW(boardId, DAOUT2_16, 0xFFF)
 #wasco.wasco_outportW(boardId, DAOUT3_16, 0xFFF)
-#time.sleep(5)     
+#time.sleep(5)
 #
 #wasco.wasco_outportW(boardId, DAOUT1_16, 0x000)
 #wasco.wasco_outportW(boardId, DAOUT2_16, 0x000)
 #wasco.wasco_outportW(boardId, DAOUT3_16, 0x000)
-#time.sleep(5)     
+#time.sleep(5)
 
