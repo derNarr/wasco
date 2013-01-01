@@ -7,25 +7,25 @@
 #
 # GPL 3.0+ or (cc) by-sa (http://creativecommons.org/licenses/by-sa/3.0/)
 #
-# content: 
+# content:
 #
 # input: --
 # output: --
 #
 # created 2010
-# last mod 2012-05-31 13:07 KS
+# last mod 2013-01-01 10:24 KS
 
 from __future__ import print_function
 import sys
 from ctypes import c_int,c_ulong,byref
 import constants
-from exceptions import OSError, ImportError, BaseException 
+from exceptions import OSError, ImportError, BaseException
 
-class Wasco(object): 
-    """ 
+class Wasco(object):
+    """
     Gives you an object wasco which is a handle for wasco card and already
-    initialized. 
-    
+    initialized.
+
     It also gives you the boardId and boardInfo in the
     variables boardId and boardInfo.
 
@@ -35,28 +35,28 @@ class Wasco(object):
     """
     def __init__(self, dummy=False):
         self.dummy = dummy
-        try: 
+        try:
             if self.dummy is True:
                 raise(BaseException) # GOTO: Exception is just used to jump to the except block
             from ctypes import windll
             # load dll
             self.wasco = windll.wasco
-            
+
             # define some important variables
             self.boardId = c_int(1)
             self.error = c_ulong()
             self.boardInfo = constants.WascoBoardInfo()
-            
+
             # error if board-id is not valid
             self.error = self.wasco.wasco_getBoardInfo(self.boardId, byref(self.boardInfo))
-            
+
             if( self.error ):
                 print(self.error, file=sys.stderr)
-            
+
             # warning if there are no analog outputs
             if( not self.boardInfo.nAnalogOut ):
                 print("WARNING: no analog outputs found", file=sys.stderr)
-            
+
             # initialize card
             self.wasco.wasco_openBoard( byref(self.boardId), self.boardInfo.pBoardName)
 
@@ -82,8 +82,4 @@ class Wasco(object):
 
 wasco = Wasco()
 boardId = c_int(1)
-        
-
-
-
 
