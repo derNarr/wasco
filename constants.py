@@ -16,14 +16,15 @@
 # output: --
 #
 # created 2010
-# last mod 2013-01-01 10:55 KS
+# last mod 2013-01-08 12:37 KS
 
 # Grundsaetzlich werden aus der wasco.h einige Definitionen uebernommen,
 # dann wird mit ctypes die dll geladen und die Karte vorbereitet.
 
 """
-WascoConstants.py defines all important variables, constants and structures
+This module defines all important variables, constants and structures
 for wasco card.
+
 """
 
 from ctypes import Structure, c_ulong, c_char

@@ -13,11 +13,11 @@
 # output: --
 #
 # created 2010
-# last mod 2013-01-01 10:24 KS
+# last mod 2013-01-08 13:58 KS
 
 from __future__ import print_function
 import sys
-from ctypes import c_int,c_ulong,byref
+from ctypes import c_int, c_ulong, byref
 import constants
 from exceptions import OSError, ImportError, BaseException
 
@@ -61,8 +61,9 @@ class Wasco(object):
             self.wasco.wasco_openBoard( byref(self.boardId), self.boardInfo.pBoardName)
 
             self.wasco_outportW = self.wasco.wasco_outportW
+            self.wasco_readAnalogInp = self.wasco.wasco_readAnalogInp
 
-        except (OSError, ImportError, BaseException):
+        except (OSError, ImportError, Exception):
             if self.dummy is False:
                 print('''
                 ########## WARNING ##########
@@ -76,9 +77,17 @@ class Wasco(object):
     def wasco_outportW(self, board_id, channel, value):
         """
         Dummy function is only called when dummy=True.
+
         """
-        # dummy for the only function we use
         pass
+
+    def wasco_readAnalogInp(self, board_id, hCallBack, channel, value, flags):
+        """
+        Dummy function is only called when dummy=True.
+
+        """
+        pass
+
 
 wasco = Wasco()
 boardId = c_int(1)
