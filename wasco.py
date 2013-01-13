@@ -61,6 +61,7 @@ class Wasco(object):
             self.wasco.wasco_openBoard( byref(self.boardId), self.boardInfo.pBoardName)
 
             self.wasco_outportW = self.wasco.wasco_outportW
+            self.wasco_inportW = self.wasco.wasco_inportW
             self.wasco_readAnalogInp = self.wasco.wasco_readAnalogInp
 
         except (OSError, ImportError, Exception):
@@ -77,6 +78,17 @@ class Wasco(object):
     def wasco_outportW(self, board_id, channel, value):
         """
         Dummy function is only called when dummy=True.
+
+        """
+        pass
+
+    def wasco_inportW(self, board_id, port_offset):
+        """
+        Dummy function is only called when dummy=True.
+
+        Returns
+        -------
+        c_long (WORD) with corresponding value
 
         """
         pass
