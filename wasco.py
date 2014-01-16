@@ -86,9 +86,8 @@ class Wasco(object):
         """
         Dummy function is only called when dummy=True.
 
-        Returns
-        -------
-        c_long (WORD) with corresponding value
+        Returns:
+            c_long (WORD) with corresponding value
 
         """
         pass
