@@ -16,8 +16,8 @@
 # last mod 2012-05-29 12:36 DW
 
 """
-wasco provides the constants in WascoConstants and a ctypes interface to
-the runtime libraries of the wasco-card.
+wasco provides the constants in constants and a ctypes interface to
+the runtime libraries of the wasco card.
 """
 
 __all__ = ['wasco','WascoConstants']

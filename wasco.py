@@ -26,8 +26,8 @@ class Wasco(object):
     Gives you an object wasco which is a handle for wasco card and already
     initialized.
 
-    It also gives you the boardId and boardInfo in the
-    variables boardId and boardInfo.
+    It also gives you the boardId and boardInfo in the variables boardId
+    and boardInfo.
 
     In principle, some definitions from wasco.h are taken, then dll is
     loaded using ctypes, and card is initialized.
